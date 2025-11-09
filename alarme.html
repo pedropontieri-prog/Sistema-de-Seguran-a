@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarmes Modernos - Sistemas de Segurança Avançados</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #222;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ef233c, #d90429);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #8d99ae;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #edf2f4;
+      color: #d90429;
+    }
+
+    .produtos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .produto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #d90429;
+    }
+
+    .graficos, .comparativo {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #d90429;
+      color: white;
+    }
+
+    footer {
+      background-color: #2b2d42;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <section class="hero">
+    <h1>Alarmes Modernos</h1>
+    <p class="lead">Proteção ativa com sensores inteligentes e controle completo pelo seu celular.</p>
+    <a href="index.html" class="btn-primary">Voltar à página inicial</a>
+  </section>
+
+  <!-- Descrição detalhada -->
+  <section class="produtos">
+    <div class="produto">
+      <img src="https://i.ibb.co/35pXy933/alarme-jpg.jpg" alt="Sistema de alarme moderno">
+      <h3>Sistema de Alarme Inteligente</h3>
+      <p>
+        Os <strong>alarmes modernos</strong> são projetados para oferecer segurança total, com sensores de presença, abertura de portas e janelas, e integração total com outros dispositivos inteligentes da casa.
+      </p>
+      <ul>
+        <li><strong>Monitoramento em tempo real:</strong> saiba instantaneamente quando algo é detectado.</li>
+        <li><strong>Integração com câmeras e fechaduras RFID:</strong> sistema unificado de segurança.</li>
+        <li><strong>Alertas automáticos:</strong> notificações enviadas ao seu celular em segundos.</li>
+        <li><strong>Controle remoto:</strong> ative ou desative o sistema de qualquer lugar.</li>
+        <li><strong>Bateria de emergência:</strong> funcionamento garantido mesmo sem energia elétrica.</li>
+      </ul>
+      <p>
+        Ideal para <strong>residências, empresas e comércios</strong>, o sistema de alarme inteligente é a solução perfeita para quem busca segurança prática e confiável.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparativo de modelos -->
+  <section class="comparativo">
+    <h2 style="text-align:center; color:#d90429;">Comparativo de Modelos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Tipo de Sensor</th>
+          <th>Conectividade</th>
+          <th>Alcance (m²)</th>
+          <th>Preço Médio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SafeGuard Basic</td>
+          <td>Movimento (PIR)</td>
+          <td>Wi-Fi</td>
+          <td>120</td>
+          <td>R$ 550</td>
+        </tr>
+        <tr>
+          <td>SecurePro 5G</td>
+          <td>Movimento + Porta/Janela</td>
+          <td>Wi-Fi + Bluetooth</td>
+          <td>200</td>
+          <td>R$ 780</td>
+        </tr>
+        <tr>
+          <td>UltraSafe Smart+</td>
+          <td>Multissensor (Presença, Som, Vibração)</td>
+          <td>Wi-Fi + GSM</td>
+          <td>250</td>
+          <td>R$ 950</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Gráficos interativos -->
+  <section class="graficos">
+    <h2 style="text-align:center; color:#d90429;">Dados de Mercado e Satisfação</h2>
+    <canvas id="graficoCrescimento" height="120"></canvas>
+    <canvas id="graficoSatisfacao" height="120" style="margin-top:40px;"></canvas>
+  </section>
+
+  <footer>
+    <p>© 2025 Sistemas de Segurança Avançados — Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Gráfico 1: Crescimento do mercado de alarmes
+    const ctx1 = document.getElementById('graficoCrescimento').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+        datasets: [{
+          label: 'Instalações de sistemas de alarme (milhares)',
+          data: [20, 32, 46, 61, 79, 95],
+          borderColor: '#ef233c',
+          backgroundColor: 'rgba(239, 35, 60, 0.2)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Crescimento do uso de alarmes inteligentes no Brasil'
+          },
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Gráfico 2: Satisfação dos usuários
+    const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Muito satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
+        datasets: [{
+          data: [65, 25, 7, 3],
+          backgroundColor: ['#ef233c', '#ff758f', '#ffb3c1', '#8d99ae']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Satisfação dos usuários com alarmes inteligentes em 2025'
+          },
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

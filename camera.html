@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câmeras Inteligentes - Sistemas de Segurança Avançados</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #222;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0066ff, #003f9e);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #8fb8ff;
+      color: #003f9e;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #edf2f4;
+      color: #003f9e;
+    }
+
+    .produtos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .produto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #003f9e;
+    }
+
+    .graficos, .comparativo {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #0066ff;
+      color: white;
+    }
+
+    footer {
+      background-color: #003f9e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <section class="hero">
+    <h1>Câmeras Inteligentes</h1>
+    <p class="lead">Monitoramento em tempo real, visão noturna e detecção de movimento com inteligência artificial.</p>
+    <a href="index.html" class="btn-primary">Voltar à página inicial</a>
+  </section>
+
+  <!-- Descrição detalhada -->
+  <section class="produtos">
+    <div class="produto">
+      <img src="https://i.ibb.co/8gV37Xwk/camera-jpg.jpg" alt="Câmera inteligente de segurança">
+      <h3>Monitoramento Inteligente</h3>
+      <p>
+        As <strong>câmeras inteligentes</strong> combinam alta resolução com recursos avançados de IA para garantir uma vigilância precisa e confiável 24h por dia.
+      </p>
+      <ul>
+        <li><strong>Visão noturna:</strong> imagens nítidas mesmo no escuro.</li>
+        <li><strong>Detecção de movimento com IA:</strong> alerta apenas para pessoas e eventos relevantes.</li>
+        <li><strong>Conexão remota:</strong> acesso via celular de qualquer lugar.</li>
+        <li><strong>Gravação em nuvem:</strong> segurança dos seus vídeos garantida.</li>
+        <li><strong>Integração:</strong> compatível com assistentes virtuais e sistemas de alarme.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Comparativo de modelos -->
+  <section class="comparativo">
+    <h2 style="text-align:center; color:#003f9e;">Comparativo de Modelos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Resolução</th>
+          <th>Visão Noturna</th>
+          <th>Conectividade</th>
+          <th>Preço Médio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SmartCam X1</td>
+          <td>1080p</td>
+          <td>15 m</td>
+          <td>Wi-Fi</td>
+          <td>R$ 499</td>
+        </tr>
+        <tr>
+          <td>SmartCam Pro</td>
+          <td>4K</td>
+          <td>25 m</td>
+          <td>Wi-Fi + NVR</td>
+          <td>R$ 899</td>
+        </tr>
+        <tr>
+          <td>MiniCam Wi-Fi</td>
+          <td>720p</td>
+          <td>10 m</td>
+          <td>Wi-Fi</td>
+          <td>R$ 299</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Gráficos -->
+  <section class="graficos">
+    <h2 style="text-align:center; color:#003f9e;">Popularidade e Satisfação dos Usuários</h2>
+    <canvas id="graficoPopularidade" height="120"></canvas>
+    <br><br>
+    <canvas id="graficoSatisfacaoCam" height="120"></canvas>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sistemas de Segurança Avançados - Câmeras Inteligentes</p>
+  </footer>
+
+  <script>
+    // Gráfico de Popularidade
+    const ctx1 = document.getElementById('graficoPopularidade');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['SmartCam X1', 'SmartCam Pro', 'MiniCam Wi-Fi'],
+        datasets: [{
+          label: 'Popularidade (%)',
+          data: [70, 55, 40],
+          backgroundColor: ['#4A90E2', '#003f9e', '#8fb8ff']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, max: 100 }
+        }
+      }
+    });
+
+    // Gráfico de Satisfação
+    const ctx2 = document.getElementById('graficoSatisfacaoCam');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Muito Satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
+        datasets: [{
+          data: [60, 25, 10, 5],
+          backgroundColor: ['#0066ff', '#3399ff', '#66b2ff', '#99ccff']
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+</body>
+</html>
