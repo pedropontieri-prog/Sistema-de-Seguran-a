@@ -16,6 +16,7 @@
       color: #222;
     }
 
+    /* ---------- CABEÇALHO ---------- */
     .hero {
       background: linear-gradient(135deg, #ef233c, #d90429);
       color: white;
@@ -42,6 +43,7 @@
       color: #d90429;
     }
 
+    /* ---------- PRODUTOS ---------- */
     .produtos {
       display: flex;
       flex-direction: column;
@@ -54,8 +56,9 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 800px;
-      margin-bottom: 40px;
+      width: 85%;
+      margin: 40px auto;
+      transition: all 0.3s ease;
     }
 
     .produto img {
@@ -68,13 +71,15 @@
       color: #d90429;
     }
 
+    /* ---------- COMPARATIVO E GRÁFICOS ---------- */
     .graficos, .comparativo {
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 700px;
+      width: 85%;
       margin: 40px auto;
+      transition: all 0.3s ease;
     }
 
     table {
@@ -94,14 +99,49 @@
       color: white;
     }
 
+    /* ---------- RODAPÉ ---------- */
     footer {
       background-color: #2b2d42;
       color: white;
       text-align: center;
       padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* ---------- RESPONSIVIDADE ---------- */
+    /* 📱 Celulares */
+    @media (max-width: 768px) {
+      .produto, .comparativo, .graficos {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .btn-primary {
+        padding: 10px 18px;
+        font-size: 0.9em;
+      }
+    }
+
+    /* 💻 Computadores */
+    @media (min-width: 1024px) {
+      .produto, .comparativo, .graficos {
+        width: 70%;
+        margin: 60px auto;
+        padding: 40px;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- Cabeçalho -->
   <section class="hero">
@@ -177,10 +217,12 @@
     <canvas id="graficoSatisfacao" height="120" style="margin-top:40px;"></canvas>
   </section>
 
+  <!-- Rodapé -->
   <footer>
     <p>© 2025 Sistemas de Segurança Avançados — Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Scripts dos gráficos -->
   <script>
     // Gráfico 1: Crescimento do mercado de alarmes
     const ctx1 = document.getElementById('graficoCrescimento').getContext('2d');
