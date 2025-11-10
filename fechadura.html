@@ -54,6 +54,7 @@
       padding: 30px;
       max-width: 800px;
       margin-bottom: 40px;
+      transition: margin 0.3s ease;
     }
 
     .produto img {
@@ -73,6 +74,7 @@
       padding: 30px;
       max-width: 700px;
       margin: 40px auto;
+      transition: margin 0.3s ease;
     }
 
     table {
@@ -99,7 +101,7 @@
       padding: 15px;
     }
 
-    /* Estilo do infográfico ampliado */
+    /* Estilo do infográfico */
     .infografico-container {
       text-align: center;
       margin-top: 20px;
@@ -118,7 +120,6 @@
       transform: scale(1.03);
     }
 
-    /* Botão de download */
     .download-btn {
       display: inline-block;
       margin-top: 20px;
@@ -134,7 +135,6 @@
       background-color: #4895ef;
     }
 
-    /* Tela cheia */
     .overlay {
       display: none;
       position: fixed;
@@ -154,6 +154,44 @@
       max-height: 95%;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    /* 🔹 Ajuste automático das margens e tamanhos para celular */
+    @media (max-width: 768px) {
+      .produto,
+      .comparativo,
+      .graficos {
+        margin: 20px 10px;
+        padding: 20px;
+        max-width: 95%;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .infografico {
+        width: 80%;
+      }
+    }
+
+    /* 🔹 Ajuste para telas grandes (PC) */
+    @media (min-width: 769px) {
+      .produto,
+      .comparativo,
+      .graficos {
+        margin: 50px auto;
+        padding: 40px;
+        max-width: 800px;
+      }
+
+      .infografico {
+        width: 40%;
+      }
     }
   </style>
 </head>
@@ -185,7 +223,6 @@
     </div>
   </section>
 
-  <!-- Comparativo de modelos -->
   <section class="comparativo">
     <h2 style="text-align:center; color:#3f37c9;">Comparativo de Modelos</h2>
     <table>
@@ -224,7 +261,6 @@
     </table>
   </section>
 
-  <!-- Infográfico e gráfico -->
   <section class="graficos">
     <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
@@ -251,7 +287,6 @@
   </footer>
 
   <script>
-    // Gráfico de satisfação
     const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
     new Chart(ctx2, {
       type: 'pie',
@@ -274,20 +309,10 @@
       }
     });
 
-    // Zoom do infográfico
     const infografico = document.getElementById('infografico');
     const overlay = document.getElementById('overlay');
-
-    infografico.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-    });
-
-    overlay.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
+    infografico.addEventListener('click', () => overlay.style.display = 'flex');
+    overlay.addEventListener('click', () => overlay.style.display = 'none');
   </script>
 </body>
 </html>
-
-
-
