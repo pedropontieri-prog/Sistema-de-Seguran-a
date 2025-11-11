@@ -79,10 +79,17 @@
       transition: margin 0.3s ease;
     }
 
+    /* 🔹 Tabela totalmente responsiva */
+    .comparativo {
+      overflow-x: auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      table-layout: auto;
+      word-wrap: break-word;
     }
 
     table th, table td {
@@ -103,7 +110,7 @@
       padding: 15px;
     }
 
-    /* 🔹 Ajuste automático das margens e tamanhos para celular */
+    /* 🔹 Ajuste automático para celular */
     @media (max-width: 768px) {
       .produto,
       .comparativo,
@@ -123,6 +130,12 @@
 
       .btn-primary {
         padding: 10px 18px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
       }
 
       table th, table td {
