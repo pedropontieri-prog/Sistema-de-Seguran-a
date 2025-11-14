@@ -15,7 +15,6 @@
       color: #222;
     }
 
-    /* ======== SEÇÃO HERO ======== */
     .hero {
       background: linear-gradient(135deg, #6c63ff, #5a54d1);
       color: white;
@@ -41,7 +40,6 @@
       background-color: #4cc9f0;
     }
 
-    /* ======== PRODUTOS ======== */
     .produtos {
       display: flex;
       flex-direction: column;
@@ -68,31 +66,22 @@
       color: #3f37c9;
     }
 
-    /* ======== COMPARATIVO / GRAFICOS ======== */
-    .graficos,
-    .comparativo {
+    .graficos, .comparativo {
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 900px;
+      max-width: 700px;
       margin: 40px auto;
-    }
-
-    /* ======== TABELA ======== */
-    .comparativo {
-      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      table-layout: auto;
     }
 
-    table th,
-    table td {
+    table th, table td {
       border: 1px solid #ddd;
       padding: 10px;
       text-align: center;
@@ -103,35 +92,41 @@
       color: white;
     }
 
-    /* ======== INFOGRÁFICO ======== */
+    footer {
+      background-color: #3f37c9;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Estilo do infográfico ampliado */
     .infografico-container {
       text-align: center;
       margin-top: 20px;
     }
 
     .infografico {
-      width: 90%;
-      max-width: 1100px;
+      width: 45%;
+      max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      cursor: zoom-in;
       transition: transform 0.3s ease;
+      cursor: zoom-in;
     }
 
     .infografico:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
+    /* Botão de download */
     .download-btn {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 20px;
       background-color: #3f37c9;
       color: white;
-      padding: 12px 28px;
-      border-radius: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
       transition: background 0.3s ease;
     }
 
@@ -139,7 +134,7 @@
       background-color: #4895ef;
     }
 
-    /* ======== OVERLAY ======== */
+    /* Tela cheia */
     .overlay {
       display: none;
       position: fixed;
@@ -148,63 +143,49 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .overlay img {
       max-width: 95%;
       max-height: 95%;
       border-radius: 12px;
-    }
-
-    /* ======== RODAPÉ ======== */
-    footer {
-      background-color: #3f37c9;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-
-    /* ======== RESPONSIVIDADE ======== */
-    @media (max-width: 768px) {
-      .infografico {
-        width: 100%;
-      }
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
   </style>
 </head>
-
 <body>
-  <!-- ======== SEÇÃO HERO ======== -->
   <section class="hero">
     <h1>Fechaduras RFID</h1>
     <p class="lead">Segurança e praticidade com controle de acesso inteligente.</p>
     <a href="index.html" class="btn-primary">Voltar à página inicial</a>
   </section>
 
-  <!-- ======== PRODUTO ======== -->
   <section class="produtos">
     <div class="produto">
-      <a href="https://ibb.co/1t8FqVZy">
-        <img src="https://i.ibb.co/FLgRwv6Z/1xg.jpg" alt="Fechadura RFID">
-      </a>
+      <img src="https://i.ibb.co/Xfj6LPhf/fechadura-jpg.jpg" alt="Fechadura RFID">
       <h3>Fechaduras Inteligentes RFID</h3>
       <p>
         As <strong>fechaduras RFID</strong> utilizam tecnologia de identificação por radiofrequência para liberar o acesso de forma rápida e segura. 
-        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada.
+        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada, registrando automaticamente cada acesso.
       </p>
       <ul>
-        <li>Controle de acesso em tempo real.</li>
-        <li>Registros automáticos de entrada e saída.</li>
-        <li>Integrada ao sistema de automação residencial.</li>
-        <li>Alertas instantâneos de tentativa de violação.</li>
+        <li><strong>Controle de acesso em tempo real</strong> via app móvel.</li>
+        <li><strong>Registros automáticos</strong> de entrada e saída de usuários.</li>
+        <li><strong>Compatibilidade com automação residencial</strong> (Alexa e Google Home).</li>
+        <li><strong>Alertas instantâneos</strong> em caso de tentativa de invasão.</li>
+        <li><strong>Design moderno</strong> com acabamento em aço inox e painel touch.</li>
       </ul>
+      <p>
+        Ideais para <strong>residências, escritórios, hotéis e condomínios</strong>, as fechaduras RFID oferecem conveniência e segurança sem a necessidade de chaves físicas.
+      </p>
     </div>
   </section>
 
-  <!-- ======== TABELA COMPARATIVA ======== -->
+  <!-- Comparativo de modelos -->
   <section class="comparativo">
     <h2 style="text-align:center; color:#3f37c9;">Comparativo de Modelos</h2>
     <table>
@@ -213,8 +194,8 @@
           <th>Modelo</th>
           <th>Métodos de Acesso</th>
           <th>Conectividade</th>
-          <th>Autonomia</th>
-          <th>Preço</th>
+          <th>Autonomia da Bateria</th>
+          <th>Preço Médio</th>
         </tr>
       </thead>
       <tbody>
@@ -243,24 +224,67 @@
     </table>
   </section>
 
-  <!-- ======== GRÁFICO + INFOGRÁFICO ======== -->
+  <!-- Infográfico e gráfico -->
   <section class="graficos">
     <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
-    <!-- Canvas do gráfico -->
-    <div>
-      <canvas id="grafico" width="400" height="200"></canvas>
-    </div>
-
     <div class="infografico-container">
-      <a href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" target="_blank">
-        <img 
-          id="infografico"
-          src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" border="0" alt="Infográfico">
-      </a>
+      <img 
+         src="https://i.ibb.co/W4d0tgqv/info.png" 
+        alt="Infográfico Fechadura Eletrônica RFID" 
+        class="infografico" 
+        id="infografico"
+      >
+      <br>
+      <a href="https://i.ibb.co/DH6Yp5sf/info.png" download class="download-btn">⬇️ Baixar Infográfico</a>
     </div>
 
-    <!-- Botão de download -->
-    <div style="text-align:center;">
-      <a href="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" download class="download-btn">
-        ⬇️ Baixar
+    <div class="overlay" id="overlay">
+      <img src="https://i.ibb.co/DH6Yp5sf/info.png" alt="Infográfico ampliado">
+    </div>
+
+    <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
+  </section>
+
+  <footer>
+    <p>© 2025 Sistemas de Segurança Avançados — Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Gráfico de satisfação
+    const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Muito satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
+        datasets: [{
+          data: [60, 25, 10, 5],
+          backgroundColor: ['#3a0ca3', '#4361ee', '#4895ef', '#4cc9f0']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Nível de satisfação dos usuários em 2025'
+          },
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Zoom do infográfico
+    const infografico = document.getElementById('infografico');
+    const overlay = document.getElementById('overlay');
+
+    infografico.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
