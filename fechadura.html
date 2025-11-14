@@ -15,6 +15,7 @@
       color: #222;
     }
 
+    /* ======== SEÇÃO HERO ======== */
     .hero {
       background: linear-gradient(135deg, #6c63ff, #5a54d1);
       color: white;
@@ -40,6 +41,7 @@
       background-color: #4cc9f0;
     }
 
+    /* ======== PRODUTOS ======== */
     .produtos {
       display: flex;
       flex-direction: column;
@@ -54,6 +56,7 @@
       padding: 30px;
       max-width: 800px;
       margin-bottom: 40px;
+      transition: margin 0.3s ease;
     }
 
     .produto img {
@@ -66,22 +69,33 @@
       color: #3f37c9;
     }
 
-    .graficos, .comparativo {
+    /* ======== COMPARATIVO ======== */
+    .graficos,
+    .comparativo {
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 700px;
+      max-width: 800px;
       margin: 40px auto;
+      transition: margin 0.3s ease;
+    }
+
+    /* ======== TABELA ======== */
+    .comparativo {
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      table-layout: auto;
+      word-wrap: break-word;
     }
 
-    table th, table td {
+    table th,
+    table td {
       border: 1px solid #ddd;
       padding: 10px;
       text-align: center;
@@ -92,20 +106,7 @@
       color: white;
     }
 
-    footer {
-      background-color: #3f37c9;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-
-    /* Responsividade: Permitir rolagem horizontal em telas pequenas */
-    .table-container {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Estilo do infográfico ampliado */
+    /* ======== INFOGRÁFICO ======== */
     .infografico-container {
       text-align: center;
       margin-top: 20px;
@@ -124,7 +125,6 @@
       transform: scale(1.03);
     }
 
-    /* Botão de download */
     .download-btn {
       display: inline-block;
       margin-top: 20px;
@@ -140,52 +140,97 @@
       background-color: #4895ef;
     }
 
-    /* Media Query para tablets e dispositivos móveis */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .produtos {
-        padding: 20px;
-      }
-
-      .produto {
-        padding: 20px;
-      }
-
-      .produto img {
-        max-width: 100%;
-      }
-
-      table th, table td {
-        font-size: 14px;
-      }
+    .overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.5em;
+    .overlay img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ======== RODAPÉ ======== */
+    footer {
+      background-color: #3f37c9;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* ======== RESPONSIVIDADE ======== */
+    @media (max-width: 768px) {
+      .produto,
+      .comparativo,
+      .graficos {
+        margin: 20px 10px;
+        padding: 20px;
+        max-width: 95%;
       }
 
-      table th, table td {
-        font-size: 12px;
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .infografico {
+        width: 80%;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      table th,
+      table td {
+        font-size: 0.9em;
         padding: 8px;
       }
     }
 
+    @media (min-width: 769px) {
+      .produto,
+      .comparativo,
+      .graficos {
+        margin: 50px auto;
+        padding: 40px;
+      }
+
+      .infografico {
+        width: 40%;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <!-- ======== SEÇÃO HERO ======== -->
   <section class="hero">
     <h1>Fechaduras RFID</h1>
     <p class="lead">Segurança e praticidade com controle de acesso inteligente.</p>
     <a href="index.html" class="btn-primary">Voltar à página inicial</a>
   </section>
 
+  <!-- ======== PRODUTO ======== -->
   <section class="produtos">
     <div class="produto">
-      <img src="https://i.ibb.co/Xfj6LPhf/fechadura-jpg.jpg" alt="Fechadura RFID">
+      <a href="https://ibb.co/1t8FqVZy"><img src="https://i.ibb.co/FLgRwv6Z/1xg.jpg" alt="Fechadura RFID"></a>
       <h3>Fechaduras Inteligentes RFID</h3>
       <p>
         As <strong>fechaduras RFID</strong> utilizam tecnologia de identificação por radiofrequência para liberar o acesso de forma rápida e segura. 
@@ -204,68 +249,102 @@
     </div>
   </section>
 
-  <!-- Comparativo de modelos -->
+  <!-- ======== TABELA COMPARATIVA ======== -->
   <section class="comparativo">
     <h2 style="text-align:center; color:#3f37c9;">Comparativo de Modelos</h2>
-    
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Modelo</th>
-            <th>Métodos de Acesso</th>
-            <th>Conectividade</th>
-            <th>Autonomia da Bateria</th>
-            <th>Preço Médio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>RFID SmartLock 2000</td>
-            <td>Cartão / Senha</td>
-            <td>Wi-Fi</td>
-            <td>8 meses</td>
-            <td>R$ 650</td>
-          </tr>
-          <tr>
-            <td>SmartDoor Pro+</td>
-            <td>Cartão / App / Biometria</td>
-            <td>Wi-Fi + Bluetooth</td>
-            <td>12 meses</td>
-            <td>R$ 890</td>
-          </tr>
-          <tr>
-            <td>Elite RFID Touch</td>
-            <td>App / Senha / Cartão</td>
-            <td>Wi-Fi</td>
-            <td>10 meses</td>
-            <td>R$ 750</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Métodos de Acesso</th>
+          <th>Conectividade</th>
+          <th>Autonomia da Bateria</th>
+          <th>Preço Médio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RFID SmartLock 2000</td>
+          <td>Cartão / Senha</td>
+          <td>Wi-Fi</td>
+          <td>8 meses</td>
+          <td>R$ 650</td>
+        </tr>
+        <tr>
+          <td>SmartDoor Pro+</td>
+          <td>Cartão / App / Biometria</td>
+          <td>Wi-Fi + Bluetooth</td>
+          <td>12 meses</td>
+          <td>R$ 890</td>
+        </tr>
+        <tr>
+          <td>Elite RFID Touch</td>
+          <td>App / Senha / Cartão</td>
+          <td>Wi-Fi</td>
+          <td>10 meses</td>
+          <td>R$ 750</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <!-- Infográfico e gráfico -->
+  <!-- ======== GRÁFICO E INFOGRÁFICO ======== -->
   <section class="graficos">
     <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
     <div class="infografico-container">
-      <a href="https://ibb.co/nMJMVpf2">
-        <img 
-          src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" 
-          alt="Fechadura Eletrônica RFID" 
-          class="infografico" 
-          id="infografico"
-        >
-      </a>
+      <img 
+        src=<a href="https://ibb.co/xSMpCxwF">"https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" border="0"></a> 
+        alt="Infográfico Fechadura Eletrônica RFID" 
+        class="infografico" 
+        id="infografico"
+      >
       <br>
-      <a href="https://ibb.co/nMJMVpf2" class="download-btn">⬇️ Baixar Infográfico</a>
+      <a href"https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg"  border="0"></a> download class="download-btn">⬇️ Baixar Infográfico</a>
     </div>
+
+    <div class="overlay" id="overlay">
+      <img src="https://i.ibb.co/DH6Yp5sf/info.png" alt="Infográfico ampliado">
+    </div>
+
+    <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
   </section>
 
+  <!-- ======== RODAPÉ ======== -->
   <footer>
-    <p>&copy; 2025 Fechaduras RFID - Todos os direitos reservados.</p>
+    <p>© 2025 Sistemas de Segurança Avançados — Todos os direitos reservados.</p>
   </footer>
+
+  <!-- ======== SCRIPT ======== -->
+  <script>
+    // Gráfico de satisfação
+    const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Muito satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
+        datasets: [{
+          data: [60, 25, 10, 5],
+          backgroundColor: ['#3a0ca3', '#4361ee', '#4895ef', '#4cc9f0']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Nível de satisfação dos usuários em 2025'
+          },
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Infográfico interativo
+    const infografico = document.getElementById('infografico');
+    const overlay = document.getElementById('overlay');
+    infografico.addEventListener('click', () => overlay.style.display = 'flex');
+    overlay.addEventListener('click', () => overlay.style.display = 'none');
+  </script>
 </body>
 </html>
