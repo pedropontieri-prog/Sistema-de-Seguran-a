@@ -229,18 +229,20 @@
     <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
     <div class="infografico-container">
-      <img 
-         src="https://i.ibb.co/W4d0tgqv/info.png" 
-        alt="Infográfico Fechadura Eletrônica RFID" 
-        class="infografico" 
-        id="infografico"
-      >
+      <a href="https://ibb.co/nMJMVpf2">
+        <img 
+          src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" 
+          alt="Fechadura Eletrônica RFID" 
+          class="infografico" 
+          id="infografico"
+        >
+      </a>
       <br>
-      <a href="https://i.ibb.co/DH6Yp5sf/info.png" download class="download-btn">⬇️ Baixar Infográfico</a>
+      <a href="https://ibb.co/nMJMVpf2" class="download-btn">⬇️ Baixar Infográfico</a>
     </div>
 
     <div class="overlay" id="overlay">
-      <img src="https://i.ibb.co/DH6Yp5sf/info.png" alt="Infográfico ampliado">
+      <img src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" alt="Infográfico ampliado">
     </div>
 
     <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
@@ -253,38 +255,4 @@
   <script>
     // Gráfico de satisfação
     const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
-    new Chart(ctx2, {
-      type: 'pie',
-      data: {
-        labels: ['Muito satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
-        datasets: [{
-          data: [60, 25, 10, 5],
-          backgroundColor: ['#3a0ca3', '#4361ee', '#4895ef', '#4cc9f0']
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Nível de satisfação dos usuários em 2025'
-          },
-          legend: { position: 'bottom' }
-        }
-      }
-    });
-
-    // Zoom do infográfico
-    const infografico = document.getElementById('infografico');
-    const overlay = document.getElementById('overlay');
-
-    infografico.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-    });
-
-    overlay.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
-  </script>
-</body>
-</html>
+    new Chart(ctx2,
