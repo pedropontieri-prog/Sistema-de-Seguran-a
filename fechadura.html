@@ -56,7 +56,6 @@
       padding: 30px;
       max-width: 800px;
       margin-bottom: 40px;
-      transition: margin 0.3s ease;
     }
 
     .produto img {
@@ -69,16 +68,15 @@
       color: #3f37c9;
     }
 
-    /* ======== COMPARATIVO ======== */
+    /* ======== COMPARATIVO / GRAFICOS ======== */
     .graficos,
     .comparativo {
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
-      transition: margin 0.3s ease;
     }
 
     /* ======== TABELA ======== */
@@ -91,7 +89,6 @@
       border-collapse: collapse;
       margin-top: 20px;
       table-layout: auto;
-      word-wrap: break-word;
     }
 
     table th,
@@ -113,26 +110,28 @@
     }
 
     .infografico {
-      width: 45%;
-      max-width: 300px;
+      width: 90%;
+      max-width: 1100px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
       cursor: zoom-in;
+      transition: transform 0.3s ease;
     }
 
     .infografico:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .download-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 25px;
       background-color: #3f37c9;
       color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 12px 28px;
+      border-radius: 10px;
       text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
       transition: background 0.3s ease;
     }
 
@@ -140,6 +139,7 @@
       background-color: #4895ef;
     }
 
+    /* ======== OVERLAY ======== */
     .overlay {
       display: none;
       position: fixed;
@@ -151,14 +151,12 @@
       background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
-      padding: 20px;
     }
 
     .overlay img {
       max-width: 95%;
       max-height: 95%;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     /* ======== RODAPÉ ======== */
@@ -171,49 +169,8 @@
 
     /* ======== RESPONSIVIDADE ======== */
     @media (max-width: 768px) {
-      .produto,
-      .comparativo,
-      .graficos {
-        margin: 20px 10px;
-        padding: 20px;
-        max-width: 95%;
-      }
-
-      .hero {
-        padding: 40px 15px;
-      }
-
-      .hero h1 {
-        font-size: 1.8em;
-      }
-
       .infografico {
-        width: 80%;
-      }
-
-      table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-
-      table th,
-      table td {
-        font-size: 0.9em;
-        padding: 8px;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .produto,
-      .comparativo,
-      .graficos {
-        margin: 50px auto;
-        padding: 40px;
-      }
-
-      .infografico {
-        width: 40%;
+        width: 100%;
       }
     }
   </style>
@@ -230,22 +187,20 @@
   <!-- ======== PRODUTO ======== -->
   <section class="produtos">
     <div class="produto">
-      <a href="https://ibb.co/1t8FqVZy"><img src="https://i.ibb.co/FLgRwv6Z/1xg.jpg" alt="Fechadura RFID"></a>
+      <a href="https://ibb.co/1t8FqVZy">
+        <img src="https://i.ibb.co/FLgRwv6Z/1xg.jpg" alt="Fechadura RFID">
+      </a>
       <h3>Fechaduras Inteligentes RFID</h3>
       <p>
         As <strong>fechaduras RFID</strong> utilizam tecnologia de identificação por radiofrequência para liberar o acesso de forma rápida e segura. 
-        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada, registrando automaticamente cada acesso.
+        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada.
       </p>
       <ul>
-        <li><strong>Controle de acesso em tempo real</strong> via app móvel.</li>
-        <li><strong>Registros automáticos</strong> de entrada e saída de usuários.</li>
-        <li><strong>Compatibilidade com automação residencial</strong> (Alexa e Google Home).</li>
-        <li><strong>Alertas instantâneos</strong> em caso de tentativa de invasão.</li>
-        <li><strong>Design moderno</strong> com acabamento em aço inox e painel touch.</li>
+        <li>Controle de acesso em tempo real.</li>
+        <li>Registros automáticos de entrada e saída.</li>
+        <li>Integrada ao sistema de automação residencial.</li>
+        <li>Alertas instantâneos de tentativa de violação.</li>
       </ul>
-      <p>
-        Ideais para <strong>residências, escritórios, hotéis e condomínios</strong>, as fechaduras RFID oferecem conveniência e segurança sem a necessidade de chaves físicas.
-      </p>
     </div>
   </section>
 
@@ -258,8 +213,8 @@
           <th>Modelo</th>
           <th>Métodos de Acesso</th>
           <th>Conectividade</th>
-          <th>Autonomia da Bateria</th>
-          <th>Preço Médio</th>
+          <th>Autonomia</th>
+          <th>Preço</th>
         </tr>
       </thead>
       <tbody>
@@ -287,50 +242,42 @@
       </tbody>
     </table>
   </section>
- <!-- ======== GRÁFICO E INFOGRÁFICO ======== -->
-<section class="graficos">
-  <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
-  <div class="infografico-container">
-    <!-- IMAGEM CORRETA -->
-    <a href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" target="_blank">
+  <!-- ======== GRÁFICO + INFOGRÁFICO ======== -->
+  <section class="graficos">
+    <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
+
+    <div class="infografico-container">
+      <a href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" target="_blank">
+        <img 
+          src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg"
+          alt="Infográfico Fechadura Eletrônica RFID"
+          class="infografico"
+          id="infografico"
+        >
+      </a>
+    </div>
+
+    <!-- BOTÃO DE DOWNLOAD -->
+    <div style="text-align:center;">
+      <a 
+        href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" 
+        download
+        class="download-btn"
+      >
+        ⬇️ Baixar Infográfico
+      </a>
+    </div>
+
+    <div class="overlay" id="overlay">
       <img 
         src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg"
-        alt="Infográfico Fechadura Eletrônica RFID"
-        class="infografico"
-        id="infografico"
-        style="width:85%; max-width:950px; display:block; margin:0 auto;"
+        alt="Infográfico ampliado"
       >
-    </a>
-  </div>
+    </div>
 
-  <!-- BOTÃO DE DOWNLOAD EMBAIXO -->
-  <div style="text-align:center; margin-top:20px;">
-    <a 
-      href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" 
-      download
-      class="download-btn"
-      style="display:inline-block;"
-    >
-      ⬇️ Baixar Infográfico
-    </a>
-  </div>
-
-  <div class="overlay" id="overlay">
-    <img 
-      src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg"
-      alt="Infográfico ampliado"
-    >
-  </div>
-
-  <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
-</section>
-
-
-  <!-- GRÁFICO -->
-  <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
-</section>
-
+    <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
+  </section>
 
   <!-- ======== RODAPÉ ======== -->
   <footer>
@@ -362,15 +309,12 @@
       }
     });
 
-    // Infográfico interativo
+    // Ampliar infográfico ao clicar
     const infografico = document.getElementById('infografico');
     const overlay = document.getElementById('overlay');
     infografico.addEventListener('click', () => overlay.style.display = 'flex');
     overlay.addEventListener('click', () => overlay.style.display = 'none');
   </script>
+
 </body>
 </html>
-
-
-
-
