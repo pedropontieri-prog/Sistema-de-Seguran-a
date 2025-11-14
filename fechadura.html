@@ -250,18 +250,14 @@
     <div class="infografico-container">
       <a href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" target="_blank">
         <img 
-          src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg"border="0">
-        
-        >
+          id="infografico"
+          src="https://i.ibb.co/TM3MnyRX/Fechadura-eletronica-com-chave-rfid.jpg" border="0" alt="Infográfico">
       </a>
     </div>
 
     <!-- BOTÃO DE DOWNLOAD -->
     <div style="text-align:center;">
-      <a 
-        <a href="https://ibb.co/nMJMVpf2"></a>
-    
-      >
+      <a href="https://ibb.co/nMJMVpf2" class="download-btn">
         ⬇️ Baixar Infográfico
       </a>
     </div>
@@ -269,51 +265,4 @@
     <div class="overlay" id="overlay">
       <img 
         src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg"
-        alt="Infográfico ampliado"
-      >
-    </div>
-
-    <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
-  </section>
-
-  <!-- ======== RODAPÉ ======== -->
-  <footer>
-    <p>© 2025 Sistemas de Segurança Avançados — Todos os direitos reservados.</p>
-  </footer>
-
-  <!-- ======== SCRIPT ======== -->
-  <script>
-    // Gráfico de satisfação
-    const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
-    new Chart(ctx2, {
-      type: 'pie',
-      data: {
-        labels: ['Muito satisfeitos', 'Satisfeitos', 'Neutros', 'Insatisfeitos'],
-        datasets: [{
-          data: [60, 25, 10, 5],
-          backgroundColor: ['#3a0ca3', '#4361ee', '#4895ef', '#4cc9f0']
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Nível de satisfação dos usuários em 2025'
-          },
-          legend: { position: 'bottom' }
-        }
-      }
-    });
-
-    // Ampliar infográfico ao clicar
-    const infografico = document.getElementById('infografico');
-    const overlay = document.getElementById('overlay');
-    infografico.addEventListener('click', () => overlay.style.display = 'flex');
-    overlay.addEventListener('click', () => overlay.style.display = 'none');
-  </script>
-
-</body>
-</html>
-
-
+        alt="Inf
