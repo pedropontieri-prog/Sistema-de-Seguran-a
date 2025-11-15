@@ -113,8 +113,8 @@
     }
 
     .infografico {
-      width: 45%;
-      max-width: 300px;
+      width: 85%;
+      max-width: 900px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease;
@@ -122,7 +122,7 @@
     }
 
     .infografico:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .download-btn {
@@ -188,7 +188,8 @@
       }
 
       .infografico {
-        width: 80%;
+        width: 100%;
+        max-width: 100%;
       }
 
       table {
@@ -201,19 +202,6 @@
       table td {
         font-size: 0.9em;
         padding: 8px;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .produto,
-      .comparativo,
-      .graficos {
-        margin: 50px auto;
-        padding: 40px;
-      }
-
-      .infografico {
-        width: 40%;
       }
     }
   </style>
@@ -234,22 +222,19 @@
       <h3>Fechaduras Inteligentes RFID</h3>
       <p>
         As <strong>fechaduras RFID</strong> utilizam tecnologia de identificação por radiofrequência para liberar o acesso de forma rápida e segura. 
-        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada, registrando automaticamente cada acesso.
+        Elas permitem o uso de <strong>cartões, senhas, biometria ou aplicativos móveis</strong> para entrada.
       </p>
       <ul>
-        <li><strong>Controle de acesso em tempo real</strong> via app móvel.</li>
-        <li><strong>Registros automáticos</strong> de entrada e saída de usuários.</li>
-        <li><strong>Compatibilidade com automação residencial</strong> (Alexa e Google Home).</li>
-        <li><strong>Alertas instantâneos</strong> em caso de tentativa de invasão.</li>
-        <li><strong>Design moderno</strong> com acabamento em aço inox e painel touch.</li>
+        <li><strong>Controle de acesso em tempo real</strong> via app.</li>
+        <li><strong>Registros automáticos</strong> de entrada e saída.</li>
+        <li><strong>Compatível com automação residencial</strong>.</li>
+        <li><strong>Alertas instantâneos</strong> em caso de invasão.</li>
+        <li><strong>Design moderno</strong> com acabamento em aço inox.</li>
       </ul>
-      <p>
-        Ideais para <strong>residências, escritórios, hotéis e condomínios</strong>, as fechaduras RFID oferecem conveniência e segurança sem a necessidade de chaves físicas.
-      </p>
     </div>
   </section>
 
-  <!-- ======== TABELA COMPARATIVA ======== -->
+  <!-- ======== COMPARATIVO ======== -->
   <section class="comparativo">
     <h2 style="text-align:center; color:#3f37c9;">Comparativo de Modelos</h2>
     <table>
@@ -258,8 +243,8 @@
           <th>Modelo</th>
           <th>Métodos de Acesso</th>
           <th>Conectividade</th>
-          <th>Autonomia da Bateria</th>
-          <th>Preço Médio</th>
+          <th>Autonomia</th>
+          <th>Preço</th>
         </tr>
       </thead>
       <tbody>
@@ -288,23 +273,28 @@
     </table>
   </section>
 
-  <!-- ======== GRÁFICO E INFOGRÁFICO ======== -->
+  <!-- ======== INFOGRÁFICO E GRÁFICO ======== -->
   <section class="graficos">
     <h2 style="text-align:center; color:#3f37c9;">Fechadura Eletrônica RFID - Visão Geral do Projeto</h2>
 
     <div class="infografico-container">
       <img 
-        src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" 
-        alt="Infográfico Fechadura Eletrônica RFID" 
-        class="infografico" 
+        src="https://i.ibb.co/pjMVWC9S/Fechadura-eletronica-com-chave-rfid-1.jpg"
+        alt="Fechadura Eletrônica RFID"
+        class="infografico"
         id="infografico"
       >
       <br>
-      <a href="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" download class="download-btn">⬇️ Baixar Infográfico</a>
+      <a href="https://i.ibb.co/pjMVWC9S/Fechadura-eletronica-com-chave-rfid-1.jpg" 
+         download 
+         class="download-btn">⬇️ Baixar Infográfico</a>
     </div>
 
     <div class="overlay" id="overlay">
-      <img src="https://i.ibb.co/FbBSxRcH/Fechadura-eletronica-com-chave-rfid.jpg" alt="Infográfico ampliado">
+      <img 
+        src="https://i.ibb.co/pjMVWC9S/Fechadura-eletronica-com-chave-rfid-1.jpg"
+        alt="Infográfico ampliado"
+      >
     </div>
 
     <canvas id="graficoSatisfacao" height="80" style="margin-top:40px;"></canvas>
@@ -317,7 +307,7 @@
 
   <!-- ======== SCRIPT ======== -->
   <script>
-    // Gráfico de satisfação
+    // Gráfico
     const ctx2 = document.getElementById('graficoSatisfacao').getContext('2d');
     new Chart(ctx2, {
       type: 'pie',
@@ -340,7 +330,7 @@
       }
     });
 
-    // Infográfico interativo
+    // Infográfico ampliado
     const infografico = document.getElementById('infografico');
     const overlay = document.getElementById('overlay');
     infografico.addEventListener('click', () => overlay.style.display = 'flex');
