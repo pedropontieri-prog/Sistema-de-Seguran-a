@@ -115,7 +115,7 @@
     }
 
     /* ---------- RESPONSIVIDADE ---------- */
-    /* 📱 Celulares */
+    
     @media (max-width: 768px) {
       .produto, .comparativo, .graficos {
         margin: 20px 10px;
@@ -148,7 +148,7 @@
       }
     }
 
-    /* 💻 Computadores */
+    
     @media (min-width: 1024px) {
       .produto, .comparativo, .graficos {
         margin: 60px auto;
@@ -233,7 +233,7 @@
 
   <!-- Gráficos interativos -->
   <section class="graficos">
-    <h2 style="text-align:center; color:#d90429;">Dados de Mercado e Satisfação</h2>
+    <h1 style="text-align:center; color#FFFF00;">Dados de Mercado e Satisfação</h1>
     <canvas id="graficoCrescimento" height="120"></canvas>
     <canvas id="graficoSatisfacao" height="120" style="margin-top:40px;"></canvas>
   </section>
@@ -265,7 +265,10 @@
         plugins: {
           title: {
             display: true,
-            text: 'Crescimento do uso de alarmes inteligentes no Brasil'
+            text: 'Crescimento do uso de alarmes inteligentes no Brasil',
+            font:{
+              size:24
+            }
           },
           legend: { display: false }
         },
@@ -303,6 +306,7 @@
   </script>
 </body>
 </html>
+
 
 
 
